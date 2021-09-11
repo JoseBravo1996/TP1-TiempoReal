@@ -6,7 +6,7 @@
 #define INTR 0X1C /* 18.2 Hz */
 void interrupt ( *oldhandler)();
 int count=0;
-int frec;
+float frec;
 
 void interrupt handler()
 {
@@ -19,7 +19,7 @@ void interrupt handler()
 int main(void)
 {
    printf("indique la frecuencia: ");
-   scanf("%s", &frec);
+   scanf("%f", &frec);
 
    /* El vector de interrupción es el valor base del segmento y el desplazamiento de la rutina del servicio de interrupción. */
    oldhandler = getvect(frec); 
